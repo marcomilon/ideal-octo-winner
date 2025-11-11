@@ -1,4 +1,4 @@
-import type { Schema } from "./amplify/data/resource"
+import type { Schema } from "../amplify/data/resource"
 import "./assets/main.css";
 import { createApp } from "vue";
 import App from "./App.vue";
