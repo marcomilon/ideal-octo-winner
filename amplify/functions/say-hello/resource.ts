@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config({ path: '.env' })
+
 import { defineFunction } from '@aws-amplify/backend';
 
 export const sayHello = defineFunction({
@@ -6,6 +9,7 @@ export const sayHello = defineFunction({
   // optionally specify a path to your handler (defaults to "./handler.ts")
   entry: './handler.ts',
   environment: {
-    NAME: 'World'
+    NAME: 'World',
+    API_ENDPOINT: process.env.API_ENDPOINT || '',
   }
 });
