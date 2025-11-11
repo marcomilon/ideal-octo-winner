@@ -15,12 +15,7 @@ const schema = a.schema({
     })
     .returns(a.string())
     .authorization(allow => [allow.guest()])
-    .handler(a.handler.function(sayHello)),
-  Todo: a
-    .model({
-      content: a.string(),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
+    .handler(a.handler.function(sayHello))
 });
 
 export type Schema = ClientSchema<typeof schema>;
