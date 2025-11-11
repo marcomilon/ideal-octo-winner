@@ -1,7 +1,4 @@
-import * as dotenv from 'dotenv'
-dotenv.config({ path: '.env' })
-
-import { defineFunction } from '@aws-amplify/backend';
+import { defineFunction, secret } from '@aws-amplify/backend';
 
 export const sayHello = defineFunction({
   // optionally specify a name for the Function (defaults to directory name)
@@ -11,5 +8,6 @@ export const sayHello = defineFunction({
   environment: {
     NAME: 'World',
     API_ENDPOINT: process.env.API_ENDPOINT || '',
+    API_KEY: secret('MY_API_KEY')
   }
 });
